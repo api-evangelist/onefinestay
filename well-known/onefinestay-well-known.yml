@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.onefinestay.com/.well-known/
+host: https://www.onefinestay.com
+note: >-
+  Consumer luxury-rental brand (Accor / Exclusive Resorts). No public API,
+  no OAuth/OIDC discovery surface. Only a security.txt is published, and it is
+  an unmodified template (Contact is the placeholder user@example.com), so no
+  genuine vulnerability-disclosure program is claimed.
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: onefinestay-security.txt
+    note: RFC 9116; template with placeholder Contact user@example.com
+  - path: /.well-known/openid-configuration
+    status: 302
+    note: redirect to marketing site, no OIDC document
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    note: redirect, no RFC 8414 document
+  - path: /.well-known/api-catalog
+    status: 302
+    note: redirect, no api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 302
+    note: redirect, no ai-plugin
